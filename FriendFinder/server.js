@@ -10,4 +10,4 @@ app.use(express.json());
 
 app.listen(PORT, function() {
     console.log("Server is listening on:" + PORT);
-})
+});
