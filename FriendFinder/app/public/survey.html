@@ -1,12 +1,223 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Freind Finder</title>
+        <title>Freind Finder | Survey</title>
         <meta charset = "UTF-8">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery.js"></script>
 
     </head>
 
     <body>
+        <div class = "container">
+        <nav class="navbar navbar-light bg-light p-3">
+            <h1>Friend Finder Survey</h1>
+        </nav>
+
+        <div class="card mt-5">
+                <div class="card-header">
+                About You
+                </div>
+                <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your name here">
+                    </div>
+                    <div class="form-group">
+                        <label for="imageurl">Your Photo URL</label>
+                        <input type="text" class="form-control" id="image" placeholder="Image URL">
+                        
+                    </div>
+                   
+                </form>
+                </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                Survey Quiz
+            </div>
+            <div class="card-body">
+                <form>
+                <div class="form-group">
+                    <label for="question">1. You enjoy vibrant social events with lots of people. </label>
+                    <select class="answer form-control" id="select1">
+                        <option value=""></option>
+                        <option value=1>1 [Strongly Disagree]</option>
+                        <option value=2>2 [Disagree]</option>
+                        <option value=3>3 [Somewhat Agree]</option>
+                        <option value=4>4 [Agree]</option>
+                        <option value=5>5 [Strongly Agree]</option>
+                    </select>
+                    <label for="question">2. You often spend time exploring unrealistic yet intriguing ideas.</label>
+                    <select class="answer form-control" id="select2">
+                        <option value=""></option>
+                        <option value=1>1 [Strongly Disagree]</option>
+                        <option value=2>2 [Disagree]</option>
+                        <option value=3>3 [Somewhat Agree]</option>
+                        <option value=4>4 [Agree]</option>
+                        <option value=5>5 [Strongly Agree]</option>
+                    </select>
+                    <label for="question">3. Your travel plans are more likely to look like a rough list of ideas than a detailed itinerary.</label>
+                    <select class="answer form-control" id="select3">
+                        <option value=""></option>
+                        <option value=1>1 [Strongly Disagree]</option>
+                        <option value=2>2 [Disagree]</option>
+                        <option value=3>3 [Somewhat Agree]</option>
+                        <option value=4>4 [Agree]</option>
+                        <option value=5>5 [Strongly Agree]</option>
+                    </select>
+                    <label for="question">4. You often think about what you should have said in a conversation long after it has taken place.</label>
+                    <select class="answer form-control" id="select4">
+                        <option value=""></option>
+                        <option value=1>1 [Strongly Disagree]</option>
+                        <option value=2>2 [Disagree]</option>
+                        <option value=3>3 [Somewhat Agree]</option>
+                        <option value=4>4 [Agree]</option>
+                        <option value=5>5 [Strongly Agree]</option>
+                    </select>
+                    <label for="question">5. If your friend is sad about something, your first instinct is to support them emotionally, not try to solve their problem.</label>
+                    <select class="answer form-control" id="select5">
+                        <option value=""></option>
+                        <option value=1>1 [Strongly Disagree]</option>
+                        <option value=2>2 [Disagree]</option>
+                        <option value=3>3 [Somewhat Agree]</option>
+                        <option value=4>4 [Agree]</option>
+                        <option value=5>5 [Strongly Agree]</option>
+                    </select>
+                    <label for="question">6. People can rarely upset you.</label>
+                    <select class="answer form-control" id="select6">
+                        <option value=""></option>
+                        <option value=1>1 [Strongly Disagree]</option>
+                        <option value=2>2 [Disagree]</option>
+                        <option value=3>3 [Somewhat Agree]</option>
+                        <option value=4>4 [Agree]</option>
+                        <option value=5>5 [Strongly Agree]</option>
+                    </select>
+                    <label for="question">7. It would be a challenge for you to spend the whole weekend all by yourself without feeling bored.</label>
+                    <select class="answer form-control" id="select7">
+                        <option value=""></option>
+                        <option value=1>1 [Strongly Disagree]</option>
+                        <option value=2>2 [Disagree]</option>
+                        <option value=3>3 [Somewhat Agree]</option>
+                        <option value=4>4 [Agree]</option>
+                        <option value=5>5 [Strongly Agree]</option>
+                    </select>
+                    <label for="question">8. You are more of a detail-oriented than a big picture person.</label>
+                    <select class="answer form-control" id="select8">
+                        <option value=""></option>
+                        <option value=1>1 [Strongly Disagree]</option>
+                        <option value=2>2 [Disagree]</option>
+                        <option value=3>3 [Somewhat Agree]</option>
+                        <option value=4>4 [Agree]</option>
+                        <option value=5>5 [Strongly Agree]</option>
+                    </select>
+                    <label for="question">9. In your opinion, it is sometimes ok to step on others to get ahead in life.</label>
+                    <select class="answer form-control" id="select9">
+                        <option value=""></option>
+                        <option value=1>1 [Strongly Disagree]</option>
+                        <option value=2>2 [Disagree]</option>
+                        <option value=3>3 [Somewhat Agree]</option>
+                        <option value=4>4 [Agree]</option>
+                        <option value=5>5 [Strongly Agree]</option>
+                    </select>
+                    <label for="question">10. If you make a mistake, you tend to start doubting yourself, your abilities, or your knowledge.</label>
+                    <select class="answer form-control" id="select10">
+                        <option value=""></option>
+                        <option value=1>1 [Strongly Disagree]</option>
+                        <option value=2>2 [Disagree]</option>
+                        <option value=3>3 [Somewhat Agree]</option>
+                        <option value=4>4 [Agree]</option>
+                        <option value=5>5 [Strongly Agree]</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" id = "submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends">API Friends Link</a> | <a href="/home">Home</a></p>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Your Matching Friend is ... </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                     <h5 id="matchingName"></h5>
+                     <img id = "matchingImg" style="width: 250px; height:350px;">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
+                    </div>
+                  </div>
+                </div>
+              </div>
+
         
     </body>
+
+    <script type ="text/javascript">
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+
+        function validInfo() {
+            var valid = true;
+            $(".answer").each(function () {
+                if ($(this).val() === "") {
+                    valid = false;
+                }
+            });
+            return valid
+        }
+        if (validInfo() === true) {
+        var newInput = {
+            name: $("#name").val().trim(),
+            photo: $("#image").val().trim(),
+            scores: [
+                $("#select1").val(),
+                $("#select2").val(),
+                $("#select3").val(),
+                $("#select4").val(),
+                $("#select5").val(),
+                $("#select6").val(),
+                $("#select7").val(),
+                $("#select8").val(),
+                $("#select9").val(),
+                $("#select10").val()
+            ]
+        };
+        
+        console.log(newInput)
+        $.post("/api/friends", newInput, function(data) {
+            $("#matchingName").text(data.name);
+            $("#matchingImg").attr("src", data.image)
+            $("#modal").modal("toggle");
+
+            console.log(newInput);
+
+            $("#name").val("");
+            $("#image").val("");
+            $(".answer").val("");
+        });
+    } else {
+        alert("Please Complete all questions")
+    }
+    })
+    
+    </script>
 </html>
+
