@@ -5,7 +5,8 @@
         <meta charset = "UTF-8">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <!-- JQuery -->
         <script src="https://code.jquery.com/jquery.js"></script>
 
@@ -135,11 +136,31 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary" id = "submit">Submit</button>
+                <button type="submit" data-toggle="modal" data-target="#modal" class="btn btn-primary" id = "submit">Submit</button>
                 </form>
             </div>
         </div>
         </div>
+
+        <div class="modal fade" id="modal" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Your Matching Friend is ... </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                 <h5 id="matchingName"></h5>
+                 <img id = "matchingImg" style="width: 250px; height:350px;">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
+                </div>
+              </div>
+            </div>
+          </div>
 
         <footer class="footer">
             <div class="container">
@@ -147,25 +168,7 @@
             </div>
         </footer>
 
-        <div class="modal fade" id="modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Your Matching Friend is ... </h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                     <h5 id="matchingName"></h5>
-                     <img id = "matchingImg" style="width: 250px; height:350px;">
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
-                    </div>
-                  </div>
-                </div>
-              </div>
+        
 
         
     </body>
@@ -174,16 +177,6 @@
     $("#submit").on("click", function(event) {
         event.preventDefault();
 
-        function validInfo() {
-            var valid = true;
-            $(".answer").each(function () {
-                if ($(this).val() === "") {
-                    valid = false;
-                }
-            });
-            return valid
-        }
-        if (validInfo() === true) {
         var newInput = {
             name: $("#name").val().trim(),
             photo: $("#image").val().trim(),
@@ -201,22 +194,22 @@
             ]
         };
         
-        console.log(newInput)
+        
         $.post("/api/friends", newInput, function(data) {
-            $("#matchingName").text(data.name);
-            $("#matchingImg").attr("src", data.image)
-            $("#modal").modal("toggle");
+        $("#matchingName").text(data.name);
+        $("#matchingImg").attr("src", data.image);
+        $("#modal").modal("toggle");
 
-            console.log(newInput);
+        console.log(newInput + "---This is from front-end");
 
-            $("#name").val("");
-            $("#image").val("");
-            $(".answer").val("");
+        $("#name").val("");
+        $("#image").val("");
+        $(".answer").val("");
         });
-    } else {
-        alert("Please Complete all questions")
-    }
-    })
+       
+        
+    
+    });
     
     </script>
 </html>
