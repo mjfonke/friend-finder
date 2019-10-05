@@ -3,13 +3,14 @@
     <head>
         <title>Freind Finder | Survey</title>
         <meta charset = "UTF-8">
+         
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <!-- JQuery -->
         <script src="https://code.jquery.com/jquery.js"></script>
-
     </head>
 
     <body>
@@ -136,13 +137,13 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                 </div>
-                <button type="submit" data-toggle="modal" data-target="#modal" class="btn btn-primary" id = "submit">Submit</button>
+                <button type="button" data-toggle="modal" data-target="#mymodal" class="btn btn-primary" id = "submit">Submit</button>
                 </form>
             </div>
         </div>
         </div>
 
-        <div class="modal fade" id="modal" role="dialog">
+        <div class="modal fade" id="mymodal" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -153,7 +154,7 @@
                 </div>
                 <div class="modal-body">
                  <h5 id="matchingName"></h5>
-                 <img id = "matchingImg" style="width: 250px; height:350px;">
+                 <img id = "matchingImg" style="width:300px; height:350px;">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
@@ -169,48 +170,45 @@
         </footer>
 
         
-
-        
-    </body>
-
-    <script type ="text/javascript">
-    $("#submit").on("click", function(event) {
+        <script type = "text/javascript">
+        $("#submit").on("click", function(event) {
         event.preventDefault();
 
         var newInput = {
-            name: $("#name").val().trim(),
-            photo: $("#image").val().trim(),
-            scores: [
-                $("#select1").val(),
-                $("#select2").val(),
-                $("#select3").val(),
-                $("#select4").val(),
-                $("#select5").val(),
-                $("#select6").val(),
-                $("#select7").val(),
-                $("#select8").val(),
-                $("#select9").val(),
-                $("#select10").val()
-            ]
-        };
-        
-        
-        $.post("/api/friends", newInput, function(data) {
-        $("#matchingName").text(data.name);
-        $("#matchingImg").attr("src", data.image);
-        $("#modal").modal("toggle");
-
-        console.log(newInput + "---This is from front-end");
-
-        $("#name").val("");
-        $("#image").val("");
-        $(".answer").val("");
-        });
-       
-        
+        name: $("#name").val().trim(),
+        photo: $("#image").val().trim(),
+        scores: [
+            $("#select1").val(),
+            $("#select2").val(),
+            $("#select3").val(),
+            $("#select4").val(),
+            $("#select5").val(),
+            $("#select6").val(),
+            $("#select7").val(),
+            $("#select8").val(),
+            $("#select9").val(),
+            $("#select10").val()
+        ]
+    };
     
+
+    $.post("/api/friends", newInput, function(data) {
+    $("#matchingName").text(data.name);
+    $("#matchingImg").attr("src", data.photo);
+    // $("#modal").modal("toggle");
+
+    console.log(newInput + "---This is from front-end");
+
+    $("#name").val("");
+    $("#image").val("");
+    $(".answer").val("");
     });
-    
-    </script>
+
+});
+        
+        </script>
+        
+    </body>
+
 </html>
 
