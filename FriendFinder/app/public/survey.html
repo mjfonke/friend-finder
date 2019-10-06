@@ -3,35 +3,35 @@
     <head>
         <title>Freind Finder | Survey</title>
         <meta charset = "UTF-8">
-         
+         <!-- JQuery -->
+         <script src="https://code.jquery.com/jquery.js"></script> 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!-- JQuery -->
-        <script src="https://code.jquery.com/jquery.js"></script>
+       
     </head>
 
     <body>
         <div class = "container">
-        <nav class="navbar navbar-light bg-light p-3">
-            <h1>Friend Finder Survey</h1>
+        <nav class="navbar">
+            <img src ="https://www.pnglot.com/pngfile/detail/504-5040324_the-big-bang-theory-logo-de-big-bang.png">
         </nav>
 
-        <div class="card mt-5">
-                <div class="card-header">
+        <div class="card mt-5 border-dark">
+                <div class="card-header bg-dark text-white">
                 About You
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-white">
                 <form>
-                    <div class="form-group">
+                    <div class="form-group input">
                         <label for="name">Your Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your name here">
+                        <input type="text" class="form-control border-dark" id="name" placeholder="Your name here">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group input">
                         <label for="imageurl">Your Photo URL</label>
-                        <input type="text" class="form-control" id="image" placeholder="Image URL">
+                        <input type="text" class="form-control border-dark" id="image" placeholder="Image URL">
                         
                     </div>
                    
@@ -39,15 +39,15 @@
                 </div>
         </div>
 
-        <div class="card mt-3">
-            <div class="card-header">
+        <div class="card mt-3 border-dark">
+            <div class="card-header bg-dark text-white">
                 Survey Quiz
             </div>
-            <div class="card-body">
+            <div class="card-body border-dark">
                 <form>
-                <div class="form-group">
+                <div class="form-group border-dark">
                     <label for="question">1. You enjoy vibrant social events with lots of people. </label>
-                    <select class="answer form-control" id="select1">
+                    <select class="answer form-control border-dark" id="select1">
                         <option value=""></option>
                         <option value=1>1 [Strongly Disagree]</option>
                         <option value=2>2 [Disagree]</option>
@@ -56,7 +56,7 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                     <label for="question">2. You often spend time exploring unrealistic yet intriguing ideas.</label>
-                    <select class="answer form-control" id="select2">
+                    <select class="answer form-control border-dark" id="select2">
                         <option value=""></option>
                         <option value=1>1 [Strongly Disagree]</option>
                         <option value=2>2 [Disagree]</option>
@@ -65,7 +65,7 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                     <label for="question">3. Your travel plans are more likely to look like a rough list of ideas than a detailed itinerary.</label>
-                    <select class="answer form-control" id="select3">
+                    <select class="answer form-control border-dark" id="select3">
                         <option value=""></option>
                         <option value=1>1 [Strongly Disagree]</option>
                         <option value=2>2 [Disagree]</option>
@@ -74,7 +74,7 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                     <label for="question">4. You often think about what you should have said in a conversation long after it has taken place.</label>
-                    <select class="answer form-control" id="select4">
+                    <select class="answer form-control border-dark" id="select4">
                         <option value=""></option>
                         <option value=1>1 [Strongly Disagree]</option>
                         <option value=2>2 [Disagree]</option>
@@ -83,7 +83,7 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                     <label for="question">5. If your friend is sad about something, your first instinct is to support them emotionally, not try to solve their problem.</label>
-                    <select class="answer form-control" id="select5">
+                    <select class="answer form-control border-dark" id="select5">
                         <option value=""></option>
                         <option value=1>1 [Strongly Disagree]</option>
                         <option value=2>2 [Disagree]</option>
@@ -92,7 +92,7 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                     <label for="question">6. People can rarely upset you.</label>
-                    <select class="answer form-control" id="select6">
+                    <select class="answer form-control border-dark" id="select6">
                         <option value=""></option>
                         <option value=1>1 [Strongly Disagree]</option>
                         <option value=2>2 [Disagree]</option>
@@ -101,7 +101,7 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                     <label for="question">7. It would be a challenge for you to spend the whole weekend all by yourself without feeling bored.</label>
-                    <select class="answer form-control" id="select7">
+                    <select class="answer form-control border-dark" id="select7">
                         <option value=""></option>
                         <option value=1>1 [Strongly Disagree]</option>
                         <option value=2>2 [Disagree]</option>
@@ -110,7 +110,7 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                     <label for="question">8. You are more of a detail-oriented than a big picture person.</label>
-                    <select class="answer form-control" id="select8">
+                    <select class="answer form-control border-dark" id="select8">
                         <option value=""></option>
                         <option value=1>1 [Strongly Disagree]</option>
                         <option value=2>2 [Disagree]</option>
@@ -119,7 +119,7 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                     <label for="question">9. In your opinion, it is sometimes ok to step on others to get ahead in life.</label>
-                    <select class="answer form-control" id="select9">
+                    <select class="answer form-control border-dark" id="select9">
                         <option value=""></option>
                         <option value=1>1 [Strongly Disagree]</option>
                         <option value=2>2 [Disagree]</option>
@@ -128,7 +128,7 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                     <label for="question">10. If you make a mistake, you tend to start doubting yourself, your abilities, or your knowledge.</label>
-                    <select class="answer form-control" id="select10">
+                    <select class="answer form-control border-dark" id="select10">
                         <option value=""></option>
                         <option value=1>1 [Strongly Disagree]</option>
                         <option value=2>2 [Disagree]</option>
@@ -137,7 +137,7 @@
                         <option value=5>5 [Strongly Agree]</option>
                     </select>
                 </div>
-                <button type="button" data-toggle="modal" data-target="#mymodal" class="btn btn-primary" id = "submit">Submit</button>
+                <button type="button" data-toggle="modal" data-target="#mymodal" class="btn btn-danger text-white float-right" id = "submit">Submit</button>
                 </form>
             </div>
         </div>
@@ -147,14 +147,14 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Your Matching Friend is ... </h5>
+                  <h5 class="modal-title text-center">Your Matching Friend is ... </h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
                  <h5 id="matchingName"></h5>
-                 <img id = "matchingImg" style="width:300px; height:350px;">
+                 <img class="ml-5 mr-5" id = "matchingImg" style="width:300px; height:350px;">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
@@ -165,39 +165,37 @@
 
         <footer class="footer">
             <div class="container">
-                <p><a href="/api/friends">API Friends Link</a> | <a href="/home">Home</a></p>
+                <p ><a class="text-black-50" href="/api/friends">API Friends Link</a> | <a class="text-black-50" href="/">Home</a></p>
             </div>
         </footer>
 
         
-        <script type = "text/javascript">
-        $("#submit").on("click", function(event) {
-        event.preventDefault();
-
-        var newInput = {
-        name: $("#name").val().trim(),
-        photo: $("#image").val().trim(),
-        scores: [
-            $("#select1").val(),
-            $("#select2").val(),
-            $("#select3").val(),
-            $("#select4").val(),
-            $("#select5").val(),
-            $("#select6").val(),
-            $("#select7").val(),
-            $("#select8").val(),
-            $("#select9").val(),
-            $("#select10").val()
+    <script type = "text/javascript">
+    $("#submit").on("click", function(event) {
+    event.preventDefault();
+    
+    var newInput = {
+    name: $("#name").val().trim(),
+    photo: $("#image").val().trim(),
+    scores: [
+        $("#select1").val(),
+        $("#select2").val(),
+        $("#select3").val(),
+        $("#select4").val(),
+        $("#select5").val(),
+        $("#select6").val(),
+        $("#select7").val(),
+        $("#select8").val(),
+        $("#select9").val(),
+        $("#select10").val()
         ]
     };
-    
 
     $.post("/api/friends", newInput, function(data) {
     $("#matchingName").text(data.name);
     $("#matchingImg").attr("src", data.photo);
     // $("#modal").modal("toggle");
 
-    console.log(newInput + "---This is from front-end");
 
     $("#name").val("");
     $("#image").val("");
@@ -206,9 +204,9 @@
 
 });
         
-        </script>
+</script>
         
-    </body>
+</body>
 
 </html>
 
